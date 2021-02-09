@@ -16,6 +16,8 @@ header{
     display: flex;
     justify-content: start;
     align-items: center;
+
+   
 }
 
 .nav-list{
@@ -24,6 +26,10 @@ header{
 
     li{
         margin-left: 24px;
+    }
+    
+    @include responsive(){
+        display: none;
     }
 
 }
@@ -37,7 +43,6 @@ header{
     font-size: 14px;
     letter-spacing: 2px;
     font-weight: 200;
-
     padding: 8px 16px;
 
     color: $gray-3;
@@ -76,12 +81,27 @@ header{
 
     
 }
+.bx{
+    @include responsive(){
+        display: block;
+    }
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    border-radius: 8px;
+    display: none;
+}
 
 .nav-social{
     display: flex;
     justify-content: center;
+    margin-right: 15px;
     align-items: center;
+    
 
+    @include responsive(){
+        display: none;
+    }
     
 
     svg{

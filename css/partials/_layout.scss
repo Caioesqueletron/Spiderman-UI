@@ -1,11 +1,19 @@
+
 .container{
     max-width: 1440px;
     margin: 0 auto;
     padding: 36px 16px;
-    overflow: hidden;
+    overflow: none;
+    height: 85vh;
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @include responsive(){
+        flex-direction: column;
+        height: auto;
+        overflow: hidden;
+    }
 
 }
 
@@ -16,10 +24,27 @@
     align-items: flex-start;
 }
 
+.flex{
+    display: flex;
+}
+.w-auto{
+    width: auto;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
 
 .spiderman{
-    width: 150%;
+    width: 120%;
     transform: translate3d(-170px,0,0);
+
+    @include responsive(){
+
+        width: 100%;
+        transform: translate3d(0,-20px,0);
+    }
 }
 
 .btn{
@@ -105,4 +130,45 @@
         }
 
     }
+}
+
+.bg-video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: center;
+    justify-content: center;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        background: linear-gradient(110deg, 
+        $blue-dark 25%, 
+        rgba(11, 12, 16, 0.80) 50%,
+        $blue-dark 70%);
+        
+    }
+}
+
+.bg-loader{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(255deg,$red 0%,$red-dark 100%);
 }
